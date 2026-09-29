@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yuandong Pan — Postdoctoral Researcher, Stanford University</title>
+<meta name="description" content="Yuandong Pan is a postdoctoral researcher in the School of Engineering at Stanford University working on machine learning, large language models, multi-modal perception, and digital twins of buildings and infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- Tokens ---------- */
+:root{
+  --bg:#ffffff;
+  --surface:#f4f5f7;
+  --ink:#14213d;          /* deep navy ink */
+  --muted:#5b6472;
+  --hairline:#dde1e7;
+  --accent:#d9500a;       /* safety orange, used sparingly */
+  --accent-soft:#fbe6d8;
+  --focus:#d9500a;
+  --serif:"Spectral", Georgia, "Times New Roman", serif;
+  --sans:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --maxw:1080px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12161f;
+    --surface:#1a2030;
+    --ink:#e8eaf0;
+    --muted:#9aa3b2;
+    --hairline:#2a3140;
+    --accent:#f08a3e;
+    --accent-soft:#3a2a1f;
+    --focus:#f08a3e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12161f;
+  --surface:#1a2030;
+  --ink:#e8eaf0;
+  --muted:#9aa3b2;
+  --hairline:#2a3140;
+  --accent:#f08a3e;
+  --accent-soft:#3a2a1f;
+  --focus:#f08a3e;
+}
+html{scroll-padding-top:calc(4.2rem + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2.5px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+strong{font-weight:600}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0}
+img{max-width:100%}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+  background:var(--bg);border-bottom:1px solid var(--hairline);
+}
+.topbar-inner{
+  max-width:var(--maxw);margin:0 auto;padding:.8rem 1.25rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.brand{font-family:var(--serif);font-weight:600;font-size:1.15rem;text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:1.25rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{text-decoration:none;color:var(--muted);font-size:.95rem;white-space:nowrap;padding:.15rem 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+section.block{padding:3.25rem 0 1.5rem;border-top:1px solid var(--hairline)}
+section.block:first-of-type{border-top:0}
+h2{font-size:1.9rem;margin-bottom:1.4rem}
+h3{font-size:1.2rem;margin:1.6rem 0 .6rem}
+p{margin:0 0 1rem;max-width:68ch}
+.prose{font-family:var(--serif);font-size:1.08rem;line-height:1.65}
+.prose p{max-width:66ch}
+.muted{color:var(--muted)}
+
+/* ---------- Hero ---------- */
+.hero{padding:3.5rem 0 3rem;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:3rem;align-items:center}
+.portrait{
+  width:96px;height:96px;border-radius:50%;overflow:hidden;
+  background:var(--surface);border:1px solid var(--hairline);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--ink);
+  margin-bottom:1.4rem;
+}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.hero h1{font-size:clamp(2.4rem,5vw,3.4rem);letter-spacing:-.01em}
+.hero .role{font-family:var(--serif);font-size:1.2rem;color:var(--muted);margin:.6rem 0 1.4rem}
+.hero .lede{font-family:var(--serif);font-size:1.12rem;line-height:1.62;max-width:56ch}
+.links{list-style:none;padding:0;margin:1.6rem 0 0;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}
+.links a{font-size:.98rem;font-weight:500}
+.hero-visual{color:var(--ink);justify-self:end;width:100%;max-width:440px}
+.hero-visual svg{width:100%;height:auto;display:block}
+
+/* ---------- Year-left rows (echoes the CV) ---------- */
+.rows{margin:0;padding:0;list-style:none}
+.row{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1.25rem;padding:.7rem 0;border-top:1px solid var(--hairline)}
+.row:first-child{border-top:0}
+.row .when{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.95rem;padding-top:.1rem}
+.row .what{max-width:72ch}
+.row .what .org{color:var(--muted)}
+.row .what .sub{display:block;color:var(--muted);font-size:.95rem;margin-top:.15rem}
+.row p{margin:0}
+
+/* ---------- Interests ---------- */
+.interests{list-style:none;padding:0;margin:.4rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
+.interests li{border:1px solid var(--hairline);border-radius:999px;padding:.28rem .8rem;font-size:.92rem;color:var(--ink)}
+
+/* ---------- Two-column groups ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.cols h3{margin-top:0}
+
+/* ---------- Publications ---------- */
+.pub-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.4rem;margin-bottom:.4rem}
+.filters{display:flex;flex-wrap:wrap;gap:.2rem 1.1rem}
+.filters button{
+  background:none;border:0;padding:.35rem 0;cursor:pointer;color:var(--muted);
+  font:inherit;font-size:.98rem;border-bottom:2px solid transparent;
+}
+.filters button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:500}
+.toggle{display:flex;align-items:center;gap:.5rem;font-size:.98rem;color:var(--muted);cursor:pointer;margin-left:auto}
+.toggle input{accent-color:var(--accent);width:1rem;height:1rem;margin:0}
+.pub-count{color:var(--muted);font-size:.95rem;margin:.4rem 0 1.2rem}
+.pub{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1.25rem;padding:.8rem 0;border-top:1px solid var(--hairline)}
+.pub:first-child{border-top:0}
+.pub .when{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.95rem;padding-top:.15rem}
+.pub .title{font-family:var(--serif);font-size:1.1rem;font-weight:600;line-height:1.35;margin:0 0 .2rem;max-width:72ch}
+.pub .authors{margin:0;max-width:78ch;font-size:.97rem}
+.pub .venue{margin:.15rem 0 0;color:var(--muted);font-size:.95rem;max-width:78ch}
+.pub .venue em{font-style:italic}
+.pub .venue .award{color:var(--ink);font-weight:500}
+.pub .venue a{margin-left:.4rem}
+.empty{color:var(--muted);padding:1rem 0}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--hairline);margin-top:3rem;padding:2.5rem 0 3rem;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+footer a{color:var(--ink)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:2rem;padding-top:2.5rem}
+  .hero-visual{justify-self:start;max-width:360px}
+  .cols{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .hero-visual{display:none}
+  .row,.pub{grid-template-columns:1fr;gap:.15rem}
+  .row .when,.pub .when{padding-top:0}
+  h2{font-size:1.6rem}
+  section.block{padding-top:2.5rem}
+  .toggle{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top">Yuandong Pan</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#awards">Awards</a>
+      <a href="#talks">Talks</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="wrap hero">
+    <div>
+      <div class="portrait" id="portrait" aria-hidden="true">YP</div>
+      <h1>Yuandong Pan</h1>
+      <p class="role">Postdoctoral Researcher, School of Engineering, Stanford University</p>
+      <p class="lede">I build machine learning for the physical world: LLM-enabled multi-agent systems, multi-modal perception, and small, specialised, verifiable models that turn images, point clouds, and radar into structured, queryable digital twins of buildings and infrastructure.</p>
+      <ul class="links" id="links"></ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg id="cloud" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img"></svg>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="wrap block" id="about">
+    <h2>About</h2>
+    <div class="prose">
+      <p>I am a postdoctoral researcher in the School of Engineering at Stanford University, working with Prof. Michael Lepech. Before Stanford, I was a Marie Skłodowska-Curie Actions Future Road Research Fellow at the University of Cambridge with Prof. Ioannis Brilakis, and a Visiting Fellow at the University of Hong Kong. I completed my PhD at the Technical University of Munich, co-advised by Prof. André Borrmann and Prof. Ioannis Brilakis, on creating information-rich digital twins of indoor environments from image and point-cloud data.</p>
+      <p>My work takes a systems-and-deployment perspective: making learning methods reliable, efficient, and trustworthy in the real world, not only in principle. It has been recognised with prizes in the CVPR Scan-to-BIM competitions and a journal Best Paper Award, and supported by competitive fellowships and funding as principal investigator. I am also interested in translating research into practice: I completed the Stanford Ignite programme at the Graduate School of Business and co-founded a startup that uses LLMs to support logistics optimization.</p>
+    </div>
+    <h3>Research interests</h3>
+    <ul class="interests">
+      <li>Machine learning</li>
+      <li>Large language models and multi-agent systems</li>
+      <li>Multi-modal learning and perception</li>
+      <li>Computer vision</li>
+      <li>Small, specialised, and verifiable models</li>
+      <li>Digital twins of buildings and infrastructure</li>
+      <li>Automated inspection and condition assessment</li>
+      <li>AI for engineering systems</li>
+    </ul>
+  </section>
+
+  <!-- ================= NEWS ================= -->
+  <section class="wrap block" id="news">
+    <h2>News</h2>
+    <ul class="rows">
+      <li class="row"><span class="when">Sep 2026</span><p class="what">Our paper on anchoring LLM-based chest X-ray report generation via diffusion language planning is accepted at NeurIPS 2026.</p></li>
+      <li class="row"><span class="when">2026</span><p class="what">Two NLP papers this year: EGT-KG, evidence-grounded typed knowledge-graph retrieval for scientific QA with small language models, at EMNLP 2026, and LLM-guided semantic bootstrapping for interpretable text classification in Findings of ACL 2026.</p></li>
+      <li class="row"><span class="when">2026</span><p class="what">Two papers in <em>Automation in Construction</em> on LLM-enabled multi-agent frameworks: one for automated Scan-to-BIM and Scan-to-Graph reconstruction, one for natural-language interaction with graph-based digital twins.</p></li>
+      <li class="row"><span class="when">2026</span><p class="what">Completed Stanford Ignite, the Graduate School of Business certificate programme in innovation and entrepreneurship, and gave a guest lecture on digitization and AI in the built environment for CEE 121/221 at Stanford.</p></li>
+      <li class="row"><span class="when">2025</span><p class="what">Our paper on a trustworthy AI-supported digital twin framework for road operation and maintenance received the <em>Smart Construction</em> Best Paper Award for 2025. I also joined the journal's Youth Editorial Board.</p></li>
+      <li class="row"><span class="when">Sep 2025</span><p class="what">Joined Stanford University as a postdoctoral researcher in the School of Engineering.</p></li>
+      <li class="row"><span class="when">2025</span><p class="what">Awarded a scholarship for the EnterpriseTech programme at Cambridge Judge Business School.</p></li>
+    </ul>
+  </section>
+
+  <!-- ================= PUBLICATIONS ================= -->
+  <section class="wrap block" id="publications">
+    <h2>Publications</h2>
+    <div class="pub-tools">
+      <div class="filters" id="filters" role="group" aria-label="Filter publications">
+        <button type="button" data-type="all" aria-pressed="true">All</button>
+        <button type="button" data-type="journal" aria-pressed="false">Journal articles</button>
+        <button type="button" data-type="conference" aria-pressed="false">Conference papers</button>
+        <button type="button" data-type="chapter" aria-pressed="false">Book chapters</button>
+        <button type="button" data-type="review" aria-pressed="false">Under review</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="firstOnly"> First-author only</label>
+    </div>
+    <p class="pub-count" id="pubCount"></p>
+    <ol class="rows" id="pubList"></ol>
+  </section>
+
+  <!-- ================= EXPERIENCE & EDUCATION ================= -->
+  <section class="wrap block" id="experience">
+    <h2>Experience and education</h2>
+    <div class="cols">
+      <div>
+        <h3>Appointments</h3>
+        <ul class="rows">
+          <li class="row"><span class="when">2025–present</span><p class="what">Postdoctoral Researcher<span class="sub">School of Engineering, Stanford University</span></p></li>
+          <li class="row"><span class="when">2023–2025</span><p class="what">Marie Skłodowska-Curie Actions Future Road Research Fellow<span class="sub">University of Cambridge</span></p></li>
+          <li class="row"><span class="when">2024</span><p class="what">Visiting Fellow<span class="sub">University of Hong Kong, Sino-British Fellowship Trust</span></p></li>
+          <li class="row"><span class="when">2017–2018</span><p class="what">Intern, Research and Development<span class="sub">Volkswagen Group, Wolfsburg, Germany</span></p></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Education</h3>
+        <ul class="rows">
+          <li class="row"><span class="when">2026</span><p class="what">Stanford Ignite, Certificate in Innovation and Entrepreneurship<span class="sub">Stanford University Graduate School of Business</span></p></li>
+          <li class="row"><span class="when">2019–2023</span><p class="what">Ph.D.<span class="sub">Technical University of Munich. Co-advised by André Borrmann and Ioannis Brilakis</span></p></li>
+          <li class="row"><span class="when">2020–2021</span><p class="what">Visiting Student, Department of Engineering<span class="sub">University of Cambridge</span></p></li>
+          <li class="row"><span class="when">2015–2019</span><p class="what">Master's degree, Mechanical Engineering<span class="sub">Karlsruhe Institute of Technology</span></p></li>
+          <li class="row"><span class="when">2011–2015</span><p class="what">Bachelor's degree, Mechanical Engineering<span class="sub">Dalian University of Technology</span></p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEACHING ================= -->
+  <section class="wrap block" id="teaching">
+    <h2>Teaching and mentoring</h2>
+    <div class="cols">
+      <div>
+        <h3>Courses</h3>
+        <ul class="rows">
+          <li class="row"><span class="when">2026</span><p class="what">Guest lecture, Digitization and AI in the Built Environment<span class="sub">CEE 121/221, Stanford University</span></p></li>
+          <li class="row"><span class="when">2025</span><p class="what">Fellowship Preparation, two lectures on writing fellowship applications<span class="sub">University of Cambridge</span></p></li>
+          <li class="row"><span class="when">2024</span><p class="what">Digital Twin Course, bachelor level; contributed to course design<span class="sub">University of Cambridge</span></p></li>
+          <li class="row"><span class="when">2020–2023</span><p class="what">Software Lab, master level; led group projects<span class="sub">Technical University of Munich</span></p></li>
+          <li class="row"><span class="when">2019–2020</span><p class="what">Construction Informatics 1 and Engineering Database<span class="sub">Technical University of Munich</span></p></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Mentoring</h3>
+        <ul class="rows">
+          <li class="row"><span class="when">2025–present</span><p class="what">Two PhD students, in LLM research and sustainable development<span class="sub">Stanford University</span></p></li>
+          <li class="row"><span class="when">2023–2024</span><p class="what">One PhD student, digital twin research<span class="sub">University of Cambridge</span></p></li>
+          <li class="row"><span class="when">2021</span><p class="what">Three master's theses and one bachelor's thesis<span class="sub">Technical University of Munich</span></p></li>
+        </ul>
+        <h3>Pedagogical training</h3>
+        <ul class="rows">
+          <li class="row"><span class="when"></span><p class="what">Associate Fellow, Advance HE<span class="sub">Professional recognition in teaching and supporting learning, UK</span></p></li>
+          <li class="row"><span class="when"></span><p class="what">Research Mentor Training, CIRTL Network<span class="sub">Teaching and Professional Development Programs, US</span></p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AWARDS & FUNDING ================= -->
+  <section class="wrap block" id="awards">
+    <h2>Awards and funding</h2>
+    <div class="cols">
+      <div>
+        <h3>Awards</h3>
+        <ul class="rows">
+          <li class="row"><span class="when">2025</span><p class="what">Best Paper Award<span class="sub">Journal of <em>Smart Construction</em></span></p></li>
+          <li class="row"><span class="when">2025</span><p class="what">Scholarship, EnterpriseTech programme<span class="sub">Judge Business School, University of Cambridge</span></p></li>
+          <li class="row"><span class="when">2022</span><p class="what">3rd Prize, Scan-to-BIM Competition<span class="sub">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span></p></li>
+          <li class="row"><span class="when">2021</span><p class="what">2nd Prize, Scan-to-BIM Competition<span class="sub">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span></p></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Fellowships and grants</h3>
+        <ul class="rows">
+          <li class="row"><span class="when">2024</span><p class="what">UKRI Access to High-Performance Computing, principal investigator<span class="sub">Project: Construct highway digital twins from multi-modal data. Worth about 22,000 USD of GPU compute</span></p></li>
+          <li class="row"><span class="when">2024</span><p class="what">Sino-British Fellowship Trust Visiting Fellowship<span class="sub">University of Hong Kong</span></p></li>
+          <li class="row"><span class="when">2023–2025</span><p class="what">Marie Skłodowska-Curie Actions Future Road Fellowship<span class="sub">University of Cambridge</span></p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TALKS ================= -->
+  <section class="wrap block" id="talks">
+    <h2>Talks and presentations</h2>
+    <ul class="rows">
+      <li class="row"><span class="when">2026</span><p class="what">Guest lecture, Digitization and AI in the Built Environment<span class="sub">CEE 121/221, Department of Civil and Environmental Engineering, Stanford University</span></p></li>
+      <li class="row"><span class="when">2026</span><p class="what">Paper presentation<span class="sub">SASBE/FUTUREROADS/BDT Conference</span></p></li>
+      <li class="row"><span class="when">2025</span><p class="what">Showcase of the Road Research Alliance<span class="sub">UK National Highways Development Centre</span></p></li>
+      <li class="row"><span class="when">2025</span><p class="what">RDFP programme workshop, two presentations; workshop hosted by DRF and Ringway<span class="sub">University of Cambridge</span></p></li>
+      <li class="row"><span class="when">2024</span><p class="what">Ordnance Survey Research Workshop; DRF Annual Review<span class="sub">University of Cambridge</span></p></li>
+      <li class="row"><span class="when">2023</span><p class="what">Ordnance Survey Research Workshop</p></li>
+      <li class="row"><span class="when">2022</span><p class="what">Paper presentation<span class="sub">European Conference on Computing in Construction (EC3), Rhodes, Greece</span></p></li>
+      <li class="row"><span class="when">2021</span><p class="what">Paper presentation<span class="sub">European Conference on Computing in Construction (EC3), online</span></p></li>
+      <li class="row"><span class="when">2021</span><p class="what">Presentation at NVIDIA GTC<span class="sub"><a href="https://www.nvidia.com/en-us/on-demand/session/gtcspring22-p42500/">Session recording</a></span></p></li>
+    </ul>
+  </section>
+
+  <!-- ================= SERVICE ================= -->
+  <section class="wrap block" id="service">
+    <h2>Service</h2>
+    <ul class="rows">
+      <li class="row"><span class="when">2025–present</span><p class="what">Youth Editorial Board<span class="sub">Journal of <em>Smart Construction</em></span></p></li>
+      <li class="row"><span class="when">2019</span><p class="what">Co-organizer, International Workshop on Built Environment Digital Twinning<span class="sub">TUM Institute for Advanced Study and Siemens AG, Technical University of Munich</span></p></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <div>Yuandong Pan, School of Engineering, Stanford University</div>
+      <div><a href="mailto:ydpan@stanford.edu">ydpan@stanford.edu</a></div>
+    </div>
+    <div>Last updated September 2026</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   EDIT HERE
+   ------------------------------------------------------------
+   LINKS: add URLs to show more buttons in the hero. Empty
+   entries are hidden automatically.
+   PHOTO: set to an image path (e.g. "photo.jpg" next to this
+   file) to replace the monogram.
+   PUBS: one object per publication. Newest first within a type.
+   ============================================================ */
+const LINKS = {
+  email:    "ydpan@stanford.edu",
+  scholar:  "",   // e.g. "https://scholar.google.com/citations?user=..."
+  github:   "",   // e.g. "https://github.com/..."
+  linkedin: "",   // e.g. "https://www.linkedin.com/in/..."
+  orcid:    "",   // e.g. "https://orcid.org/0000-0000-0000-0000"
+  cv:       ""    // e.g. "cv.pdf"
+};
+const PHOTO = "";
+const ME = "Yuandong Pan";
+
+const PUBS = [
+  // ---- Under review ----
+  {type:"review", year:null, authors:["Yuandong Pan","Jiechao Gao","Jie Wang","Stephen Luby","Michael Lepech"],
+   title:"Linking Observed Cooling, Green-Infrastructure Type, Future Climate and Heat Mortality to Value Urban Greening across Cities", venue:"Under review"},
+  {type:"review", year:null, authors:["Yuandong Pan"],
+   title:"HOVE: Hierarchical Observability-aware Vision-language Fusion with Visual Encoding for Building Energy Assessment from Street-Level Imagery", venue:"Under review"},
+  {type:"review", year:null, authors:["Yuandong Pan","Linjun Lu","Jiechao Gao","Varun Kumar Reja","Jie Wang","Michael D. Lepech","Ioannis Brilakis"],
+   title:"AutoRoadAssess: A Multi-Agent Framework for Autonomous Pavement Condition Assessment with Multi-modal Data", venue:"Under review"},
+  {type:"review", year:null, authors:["Zhiqi Hu","Yuandong Pan","André Borrmann","Ioannis Brilakis"],
+   title:"Matching Design-Intent MEP Instances in Point Clouds by Leveraging Visual Data Processing and Spatial Feature Extraction to Enrich Scan-vs-BIM System", venue:"Under review"},
+
+  // ---- Refereed journal articles ----
+  {type:"journal", year:2026, authors:["Yuandong Pan","Linjun Lu","Mudan Wang","Florian Noichl","Fan Xue","Brian Sheil","Lavindra de Silva","André Borrmann","Ioannis Brilakis"],
+   title:"Image-Guided Pavement Defect Recognition in GPR Data with Novel 3D Deep Learning Architecture", venue:"<em>Journal of Computing in Civil Engineering</em>"}, // TODO: add volume/pages
+  {type:"journal", year:2026, authors:["Yuandong Pan","Mudan Wang","Jiechao Gao","Jie Wang","Michael D. Lepech","Ioannis Brilakis"],
+   title:"LLM-enabled Multi-agent Framework for Automated Scan-to-BIM and Scan-to-Graph Reconstruction", venue:"<em>Automation in Construction</em> 188 (2026): 107003"},
+  {type:"journal", year:2026, authors:["Maximilian Kellner","Mariana Ferrandon Cervantes","Yuandong Pan","Ruodan Lu","Ioannis Brilakis","Alexander Reiterer"],
+   title:"SemanticBridge: A Dataset for 3D Semantic Segmentation of Bridges and Domain Gap Analysis", venue:"<em>Developments in the Built Environment</em> 26 (2026): 100912"},
+  {type:"journal", year:2026, authors:["Yuandong Pan","Mudan Wang","Linjun Lu","Rabindra Lamsal","Erika Parn","Sisi Zlatanova","Ioannis Brilakis"],
+   title:"LLM-enabled Multi-agent Framework for Natural Language Interaction with Graph-Based Digital Twins", venue:"<em>Automation in Construction</em> 183 (2026): 106791"},
+  {type:"journal", year:2026, authors:["Yue Xie","Shanshan Li","Linjun Lu","Yuandong Pan","Fumiya Iida"],
+   title:"A Digital Twin-Based Approach for Dynamic Traffic-Aware Routing and Charging of Electric Vehicles", venue:"<em>Expert Systems with Applications</em> (2026): 131380"},
+  {type:"journal", year:2026, authors:["Junying Liu","Tinghao Jin","Yuandong Pan","Yunong Li"],
+   title:"Data Sharing Mechanism among Intelligent Transportation Infrastructure Stakeholders: Based on the Data Value Chain Perspective", venue:"<em>Journal of Construction Engineering and Management</em> (2026): 04025240"},
+  {type:"journal", year:2026, authors:["Mudan Wang","Yuandong Pan","Linjun Lu","Erika Parn","Junying Liu","Ioannis Brilakis"],
+   title:"Automating Graph-Based Geometric Digital Model Generation for Building Digital Twin Applications from Point Cloud and Image Data", venue:"<em>Building and Environment</em> (2026): 114211", corr:true},
+  {type:"journal", year:2026, authors:["Linjun Lu","Yuandong Pan","Zhaojie Sun","Peihang Luo","Ioannis Brilakis"],
+   title:"Regional Graph-Based Pavement Condition Data Quality Assessment in Support of Trustworthy Highway Infrastructure Digital Twins", venue:"<em>Automation in Construction</em> 181 (2026): 106603", corr:true},
+  {type:"journal", year:2025, authors:["Florian Noichl","Yuandong Pan","André Borrmann"],
+   title:"Automated Steel Structure Model Reconstruction through Point Cloud Instance Segmentation and Parametric Shape Fitting", venue:"<em>Journal of Information Technology in Construction (ITcon)</em> 30(45) (2025): 1099–1122"},
+  {type:"journal", year:2025, authors:["Tonglaga Wang","Junying Liu","Yuandong Pan","Haiwen Li"],
+   title:"Antecedents to Moving Forward: Impact of Multiple Stakeholder Relationship Networks on Operational Resilience in Cross-Border Critical Infrastructure Systems", venue:"<em>Journal of Management in Engineering</em> 41(5) (2025): 04025030"},
+  {type:"journal", year:2025, authors:["Shaojie Zhou","Jia-Rui Lin","Peng Pan","Yuandong Pan","Ioannis Brilakis"],
+   title:"Impact of Color and Mixing Proportion of Synthetic Point Clouds on Semantic Segmentation", venue:"<em>Automation in Construction</em> 171 (2025): 105963"},
+  {type:"journal", year:2025, authors:["Linjun Lu","Alix Marie d'Avigneau","Yuandong Pan","Zhaojie Sun","Peihang Luo","Ioannis Brilakis"],
+   title:"Modeling Heterogeneous Spatiotemporal Pavement Data for Condition Prediction and Preventive Maintenance in Digital Twin-enabled Highway Management", venue:"<em>Automation in Construction</em> 174 (2025): 106134"},
+  {type:"journal", year:2025, authors:["Linjun Lu","Mengtian Yin","Yue Xie","Yuandong Pan","Mudan Wang","Ioannis Brilakis"],
+   title:"Development of a Trustworthy AI-supported Digital Twin Framework for Road Operation and Maintenance", venue:"<em>Smart Construction</em> 2(1) (2025): 1–29", corr:true, award:"Journal Best Paper Award 2025"},
+  {type:"journal", year:2024, authors:["Yuandong Pan","Mudan Wang","Linjun Lu","Ran Wei","Stefano Cavazzi","Matt Peck","Ioannis Brilakis"],
+   title:"Scan-to-Graph: Automatic Generation and Representation of Highway Geometric Digital Twins from Point Cloud Data", venue:"<em>Automation in Construction</em> 166 (2024): 105654"},
+  {type:"journal", year:2024, authors:["Shirin Malihi","Lilia Potseluyko","Alwyn Mathew","Hamidreza Alavi","Varun Kumar Reja","Yuandong Pan","Leonardo Binni","Ioannis Brilakis"],
+   title:"Review of Multimodal Data and Their Applications for Road Maintenance", venue:"<em>Smart Construction</em> 2(2) (2024): 0010"},
+  {type:"journal", year:2022, authors:["Yuandong Pan","Alexander Braun","Ioannis Brilakis","André Borrmann"],
+   title:"Enriching Geometric Digital Twins of Buildings with Small Objects by Fusing Laser Scanning and AI-based Image Recognition", venue:"<em>Automation in Construction</em> 140 (2022): 104375"},
+  {type:"journal", year:2022, authors:["Yuandong Pan","Alexander Braun","André Borrmann","Ioannis Brilakis"],
+   title:"3D Deep-learning-enhanced Void-growing Approach in Creating Geometric Digital Twins of Buildings", venue:"<em>Smart Infrastructure and Construction</em> 176(1) (2022): 24–40"},
+
+  // ---- Refereed conference papers ----
+  {type:"conference", year:2026, authors:["Jiechao Gao","Chang Liu","Yuandong Pan","Ying Liu","Michael Lepech"],
+   title:"Anchoring LLM-based Chest X-ray Report Generation via Diffusion Language Planning", venue:"<em>NeurIPS</em> 2026"},
+  {type:"conference", year:2026, authors:["Muran Yu","Jiechao Gao","Yuandong Pan","Barney Haoyun Miao","Andrew Carter Lesh","Kincho Law","Jie Wang","Michael Lepech"],
+   title:"EGT-KG: Evidence-Grounded Typed KG Retrieval for Practical Scientific QA with Small Language Models", venue:"<em>EMNLP</em> 2026"},
+  {type:"conference", year:2026, authors:["Yuandong Pan","Ioannis Brilakis"],
+   title:"Visual Language Models for Automated Road Defect Detection and Classification", venue:"<em>FUTUREROADS Final Conference</em> 2026", doi:"10.17863/CAM.130981"},
+  {type:"conference", year:2026, authors:["Jiechao Gao","Rohan Yadav","Yuangang Li","Yuandong Pan","Jie Wang","Ying Liu","Michael Lepech"],
+   title:"LLM-guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines", venue:"<em>Findings of the Association for Computational Linguistics: ACL 2026</em>"},
+  {type:"conference", year:2026, authors:["Daniel Koo","Jiechao Gao","Yuandong Pan","Jie Wang","Michael Lepech"],
+   title:"Perceiving Creativity in the Age of AI: How Labels, Beliefs, and Familiarity Shape Evaluations of AI-Generated and Human-Created Art", venue:"<em>SocialLLM Workshop, ICWSM</em> 2026"},
+  {type:"conference", year:2025, authors:["Zhaojie Sun","Ze Zhou Wang","Xiang Wang","Linjun Lu","Yuandong Pan","Lavindra de Silva","Ioannis Brilakis"],
+   title:"Load Spatial Superposition Effect in Traffic Speed Deflectometer Tests of Pavements", venue:"<em>Advances in Materials and Pavement Performance Prediction</em> 2025"},
+  {type:"conference", year:2025, authors:["Yuandong Pan","Linjun Lu","Mudan Wang","Varun Kumar Reja","Florian Noichl","André Borrmann","Ioannis Brilakis"],
+   title:"Zero-Shot Learning with Vision-Language Models for Estimating Building Energy Efficiency from Street View Images", venue:"<em>Computing in Civil Engineering 2025</em> (ASCE i3CE)"},
+  {type:"conference", year:2024, authors:["Zhiqi Hu","Yuandong Pan","Ioannis Brilakis"],
+   title:"Complex Instance Segmentation in Point Clouds with Images and 3D Models", venue:"<em>Computing in Civil Engineering 2024</em> (ASCE i3CE)"},
+  {type:"conference", year:2024, authors:["Mudan Wang","Ya Wen","Yuandong Pan","Hamidreza Alavi","Soheila Kookalani","Weiwei Chen","Ioannis Brilakis"],
+   title:"Automatic Extraction of Building Features for Building Façades Based on Laser Scanning Technology", venue:"<em>European Conference on Computing in Construction</em> 2024, pp. 519–525"},
+  {type:"conference", year:2024, authors:["Linjun Lu","Yuandong Pan","Ioannis Brilakis"],
+   title:"Towards Trustworthy Road Digital Twins: A State-of-the-art Review", venue:"<em>Computing in Civil Engineering 2024</em> (ASCE i3CE)"},
+  {type:"conference", year:2023, authors:["Florian Noichl","Yuandong Pan","M. Saeed Mafipour","Alexander Braun","Ioannis Brilakis","André Borrmann"],
+   title:"From Enriched Point Cloud to Structural and MEP Models: An Automated Approach to Create Semantic-Geometric Models for Industrial Facilities", venue:"<em>Computing in Civil Engineering 2023</em> (ASCE i3CE), pp. 92–99"},
+  {type:"conference", year:2022, authors:["Yuandong Pan","Florian Noichl","Alexander Braun","André Borrmann","Ioannis Brilakis"],
+   title:"Automatic Creation and Enrichment of 3D Models for Pipe Systems by Co-registration of Laser-scanned Point Clouds and Photos", venue:"<em>European Conference on Computing in Construction</em> 2022, Rhodes, Greece", doi:"10.35490/EC3.2022.181"},
+  {type:"conference", year:2022, authors:["Yuandong Pan","M. Saeed Mafipour","Mansour Mehranfar"],
+   title:"Enriching Point Features to Improve Semantic Segmentation of Point Clouds", venue:"<em>33rd Forum Bauinformatik</em> 2022, Munich, Germany"},
+  {type:"conference", year:2021, authors:["Yuandong Pan","Alexander Braun","André Borrmann","Ioannis Brilakis"],
+   title:"Void-growing: A Novel Scan-to-BIM Method for Manhattan World Buildings from Point Cloud", venue:"<em>European Conference on Computing in Construction</em> 2021, online", doi:"10.35490/EC3.2021.162"},
+
+  // ---- Book chapters ----
+  {type:"chapter", year:2024, authors:["Florian Noichl","Fiona C. Collins","Yuandong Pan","M. Saeed Mafipour","Mansour Mehranfar","André Borrmann"],
+   title:"From Purpose to Technology: A Requirements-Driven Approach to Designing Digital Twin Implementations", venue:"In <em>Digital Twins in Construction and the Built Environment</em>, pp. 91–130. American Society of Civil Engineers, 2024"},
+  {type:"chapter", year:2024, authors:["Fiona Collins","Florian Noichl","Yuandong Pan","Andrea Carrara","M. Saeed Mafipour","Kasimir Forth","André Borrmann"],
+   title:"Bestandserfassung mithilfe von Computer Vision Methoden", venue:"In <em>Künstliche Intelligenz im Bauwesen: Grundlagen und Anwendungsfälle</em>, pp. 309–326. Springer Fachmedien Wiesbaden, 2024"},
+  {type:"chapter", year:2023, authors:["Yuandong Pan","Zhiqi Hu","Ioannis Brilakis"],
+   title:"Digital Twins and Their Roles in Building Deep Renovation Life Cycle", venue:"In <em>Disrupting Buildings</em>, Palgrave Studies in Digital Business &amp; Enabling Technologies. Palgrave Macmillan, 2023"},
+
+  // ---- Technical reports ----
+  {type:"report", year:2020, authors:["Ioannis Brilakis","Yuandong Pan","André Borrmann","H. Mayer","F. Rhein","C. Vos","E. Pettinato","S. Wagner"],
+   title:"Built Environment Digital Twinning", venue:"Technical report, Technische Universität München, 2020"}
+];
+
+/* ============================================================
+   Rendering (no need to edit below)
+   ============================================================ */
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function renderLinks(){
+  const ul=document.getElementById("links");
+  const items=[];
+  if(LINKS.email)   items.push(['mailto:'+LINKS.email,'Email']);
+  if(LINKS.scholar) items.push([LINKS.scholar,'Google Scholar']);
+  if(LINKS.github)  items.push([LINKS.github,'GitHub']);
+  if(LINKS.linkedin)items.push([LINKS.linkedin,'LinkedIn']);
+  if(LINKS.orcid)   items.push([LINKS.orcid,'ORCID']);
+  if(LINKS.cv)      items.push([LINKS.cv,'CV (PDF)']);
+  ul.innerHTML=items.map(([h,t])=>'<li><a href="'+esc(h)+'">'+esc(t)+'</a></li>').join('');
+  if(PHOTO){
+    const p=document.getElementById("portrait");
+    p.innerHTML='<img src="'+esc(PHOTO)+'" alt="Portrait of Yuandong Pan">';
+    p.removeAttribute("aria-hidden");
+  }
+}
+
+function authorsHTML(list){
+  const names=list.map(n=>n===ME?'<strong>'+esc(n)+'</strong>':esc(n));
+  if(names.length===1) return names[0];
+  if(names.length===2) return names[0]+' and '+names[1];
+  return names.slice(0,-1).join(', ')+', and '+names[names.length-1];
+}
+
+const TYPE_ORDER={review:0,journal:1,conference:2,chapter:3,report:4};
+const state={type:"all",firstOnly:false};
+
+function renderPubs(){
+  const list=document.getElementById("pubList");
+  let items=PUBS.filter(p=>state.type==="all"||p.type===state.type);
+  if(state.firstOnly) items=items.filter(p=>p.authors[0]===ME);
+  // Stable sort: under review first, then by year (newest first), keeping array order within a year.
+  items=items.map((p,i)=>({p,i})).sort((a,b)=>{
+    const ya=a.p.year??9999, yb=b.p.year??9999;
+    if(yb!==ya) return yb-ya;
+    if(state.type==="all" && TYPE_ORDER[a.p.type]!==TYPE_ORDER[b.p.type]) return TYPE_ORDER[a.p.type]-TYPE_ORDER[b.p.type];
+    return a.i-b.i;
+  }).map(x=>x.p);
+
+  if(!items.length){list.innerHTML='<li class="empty">No publications match this filter.</li>';}
+  else{
+    list.innerHTML=items.map(p=>{
+      const when=p.year?String(p.year):'Under review';
+      let venue=p.venue;
+      if(p.corr) venue+='. Corresponding author';
+      if(p.award) venue+='. <span class="award">'+esc(p.award)+'</span>';
+      if(p.doi) venue+='<a href="https://doi.org/'+esc(p.doi)+'">doi</a>';
+      return '<li class="pub"><span class="when">'+when+'</span><div>'+
+        '<h3 class="title">'+esc(p.title)+'</h3>'+
+        '<p class="authors">'+authorsHTML(p.authors)+'</p>'+
+        '<p class="venue">'+venue+'</p></div></li>';
+    }).join('');
+  }
+
+  // Count sentence (always for the full list)
+  const n=t=>PUBS.filter(p=>p.type===t).length;
+  const first=t=>PUBS.filter(p=>p.type===t&&p.authors[0]===ME).length;
+  document.getElementById("pubCount").textContent=
+    n("journal")+' refereed journal articles ('+first("journal")+' as first author), '+
+    n("conference")+' conference papers ('+first("conference")+' as first author), '+
+    n("chapter")+' book chapters, '+n("report")+' technical report, and '+
+    n("review")+' manuscripts under review. Own name in bold.';
+}
+
+document.getElementById("filters").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-type]"); if(!b) return;
+  state.type=b.dataset.type;
+  document.querySelectorAll("#filters button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+  renderPubs();
+});
+document.getElementById("firstOnly").addEventListener("change",e=>{state.firstOnly=e.target.checked;renderPubs();});
+
+/* ---------- Hero visual: a scanned structure becoming a graph ---------- */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function drawCloud(){
+  const svg=document.getElementById("cloud"); if(!svg) return;
+  const rnd=mulberry32(20260928);
+  const NS="http://www.w3.org/2000/svg";
+  // Corner nodes of an isometric block (the "graph")
+  const P={p1:[92,238],p2:[196,282],p3:[300,236],q1:[92,118],q2:[196,162],q3:[300,116],q4:[196,72]};
+  const edges=[["p1","p2"],["p2","p3"],["p1","q1"],["p2","q2"],["p3","q3"],["q1","q2"],["q2","q3"],["q1","q4"],["q4","q3"]];
+  // Floor lines on the two visible faces
+  const floors=[];
+  for(let k=1;k<=2;k++){
+    const dy=k*40;
+    floors.push([[92,118+dy],[196,162+dy]]);
+    floors.push([[196,162+dy],[300,116+dy]]);
+  }
+  const g=(cls)=>{const e=document.createElementNS(NS,"g");if(cls)e.setAttribute("class",cls);svg.appendChild(e);return e;};
+  const ground=g(), scan=g(), graph=g();
+
+  // Ground returns: sparse points fading with distance
+  for(let i=0;i<260;i++){
+    const x=rnd()*400, y=236+rnd()*64;
+    const c=document.createElementNS(NS,"circle");
+    c.setAttribute("cx",x.toFixed(1));c.setAttribute("cy",y.toFixed(1));c.setAttribute("r","0.9");
+    c.setAttribute("fill","currentColor");c.setAttribute("opacity",(0.06+rnd()*0.18).toFixed(2));
+    ground.appendChild(c);
+  }
+  // Scan points along structure edges and floor lines, with jitter
+  const segs=edges.map(([a,b])=>[P[a],P[b]]).concat(floors);
+  segs.forEach(([a,b])=>{
+    const len=Math.hypot(b[0]-a[0],b[1]-a[1]);
+    const n=Math.round(len/3.2);
+    for(let i=0;i<=n;i++){
+      const t=i/n, j=(rnd()-0.5)*2.2;
+      const x=a[0]+(b[0]-a[0])*t+j, y=a[1]+(b[1]-a[1])*t+(rnd()-0.5)*2.2;
+      const c=document.createElementNS(NS,"circle");
+      c.setAttribute("cx",x.toFixed(1));c.setAttribute("cy",y.toFixed(1));c.setAttribute("r",(0.9+rnd()*0.7).toFixed(2));
+      c.setAttribute("fill","currentColor");c.setAttribute("opacity",(0.35+rnd()*0.4).toFixed(2));
+      scan.appendChild(c);
+    }
+  });
+  // Graph: faint straight edges and accent nodes at corners
+  edges.forEach(([a,b])=>{
+    const l=document.createElementNS(NS,"line");
+    l.setAttribute("x1",P[a][0]);l.setAttribute("y1",P[a][1]);l.setAttribute("x2",P[b][0]);l.setAttribute("y2",P[b][1]);
+    l.setAttribute("stroke","currentColor");l.setAttribute("stroke-width","0.6");l.setAttribute("opacity","0.35");
+    graph.appendChild(l);
+  });
+  Object.values(P).forEach(([x,y])=>{
+    const c=document.createElementNS(NS,"circle");
+    c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","3.2");
+    c.setAttribute("fill","var(--accent)");
+    graph.appendChild(c);
+  });
+}
+
+/* ---------- Highlight the section in view in the top bar ---------- */
+function watchSections(){
+  const links=[...document.querySelectorAll(".nav a")];
+  const map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
+  if(!("IntersectionObserver" in window)) return;
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        links.forEach(a=>a.removeAttribute("aria-current"));
+        const a=map.get(en.target.id); if(a) a.setAttribute("aria-current","true");
+      }
+    });
+  },{rootMargin:"-40% 0px -55% 0px"});
+  map.forEach((a,id)=>{const el=document.getElementById(id); if(el) io.observe(el);});
+}
+
+renderLinks();
+renderPubs();
+drawCloud();
+watchSections();
+</script>
+</body>
+</html>
