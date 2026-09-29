@@ -130,16 +130,13 @@ p{margin:0 0 1rem;max-width:68ch}
 .cols h3{margin-top:0}
 
 /* ---------- Publications ---------- */
-.pub-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.4rem;margin-bottom:.4rem}
+.pub-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.4rem;margin-bottom:1.2rem}
 .filters{display:flex;flex-wrap:wrap;gap:.2rem 1.1rem}
 .filters button{
   background:none;border:0;padding:.35rem 0;cursor:pointer;color:var(--muted);
   font:inherit;font-size:.98rem;border-bottom:2px solid transparent;
 }
 .filters button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:500}
-.toggle{display:flex;align-items:center;gap:.5rem;font-size:.98rem;color:var(--muted);cursor:pointer;margin-left:auto}
-.toggle input{accent-color:var(--accent);width:1rem;height:1rem;margin:0}
-.pub-count{color:var(--muted);font-size:.95rem;margin:.4rem 0 1.2rem}
 .pub{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1.25rem;padding:.8rem 0;border-top:1px solid var(--hairline)}
 .pub:first-child{border-top:0}
 .pub .when{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.95rem;padding-top:.15rem}
@@ -168,7 +165,6 @@ footer a{color:var(--ink)}
   .row .when,.pub .when{padding-top:0}
   h2{font-size:1.6rem}
   section.block{padding-top:2.5rem}
-  .toggle{margin-left:0}
 }
 </style>
 </head>
@@ -182,7 +178,6 @@ footer a{color:var(--ink)}
       <a href="#news">News</a>
       <a href="#publications">Publications</a>
       <a href="#experience">Experience</a>
-      <a href="#teaching">Teaching</a>
       <a href="#awards">Awards</a>
       <a href="#talks">Talks</a>
       <a href="#service">Service</a>
@@ -199,7 +194,7 @@ footer a{color:var(--ink)}
       <div class="portrait" id="portrait" aria-hidden="true">YP</div>
       <h1>Yuandong Pan</h1>
       <p class="role">Postdoctoral Researcher, School of Engineering, Stanford University</p>
-      <p class="lede">I build machine learning for the physical world: LLM-enabled multi-agent systems, multi-modal perception, and small, specialised, verifiable models that turn images, point clouds, and radar into structured, queryable digital twins of buildings and infrastructure.</p>
+      <p class="lede">I am a civil engineering researcher developing dependable AI for the digital transformation and lifecycle management of civil infrastructure. My work links large language models and vision-language models with geometry, asset relationships, and source evidence, so engineers can make verifiable decisions about buildings, roads, and other assets across their whole lifecycle.</p>
       <ul class="links" id="links"></ul>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -232,12 +227,12 @@ footer a{color:var(--ink)}
     <h2>News</h2>
     <ul class="rows">
       <li class="row"><span class="when">Sep 2026</span><p class="what">Our paper on anchoring LLM-based chest X-ray report generation via diffusion language planning is accepted at NeurIPS 2026.</p></li>
+      <li class="row"><span class="when">Aug 2026</span><p class="what">Our paper &ldquo;Image-Guided Pavement Defect Recognition in GPR Data with Novel 3D Deep Learning Architecture&rdquo; is accepted at the <em>Journal of Computing in Civil Engineering</em>.</p></li>
       <li class="row"><span class="when">2026</span><p class="what">Two NLP papers this year: EGT-KG, evidence-grounded typed knowledge-graph retrieval for scientific QA with small language models, at EMNLP 2026, and LLM-guided semantic bootstrapping for interpretable text classification in Findings of ACL 2026.</p></li>
       <li class="row"><span class="when">2026</span><p class="what">Two papers in <em>Automation in Construction</em> on LLM-enabled multi-agent frameworks: one for automated Scan-to-BIM and Scan-to-Graph reconstruction, one for natural-language interaction with graph-based digital twins.</p></li>
       <li class="row"><span class="when">2026</span><p class="what">Completed Stanford Ignite, the Graduate School of Business certificate programme in innovation and entrepreneurship, and gave a guest lecture on digitization and AI in the built environment for CEE 121/221 at Stanford.</p></li>
       <li class="row"><span class="when">2025</span><p class="what">Our paper on a trustworthy AI-supported digital twin framework for road operation and maintenance received the <em>Smart Construction</em> Best Paper Award for 2025. I also joined the journal's Youth Editorial Board.</p></li>
       <li class="row"><span class="when">Sep 2025</span><p class="what">Joined Stanford University as a postdoctoral researcher in the School of Engineering.</p></li>
-      <li class="row"><span class="when">2025</span><p class="what">Awarded a scholarship for the EnterpriseTech programme at Cambridge Judge Business School.</p></li>
     </ul>
   </section>
 
@@ -252,9 +247,7 @@ footer a{color:var(--ink)}
         <button type="button" data-type="chapter" aria-pressed="false">Book chapters</button>
         <button type="button" data-type="review" aria-pressed="false">Under review</button>
       </div>
-      <label class="toggle"><input type="checkbox" id="firstOnly"> First-author only</label>
     </div>
-    <p class="pub-count" id="pubCount"></p>
     <ol class="rows" id="pubList"></ol>
   </section>
 
@@ -284,36 +277,6 @@ footer a{color:var(--ink)}
     </div>
   </section>
 
-  <!-- ================= TEACHING ================= -->
-  <section class="wrap block" id="teaching">
-    <h2>Teaching and mentoring</h2>
-    <div class="cols">
-      <div>
-        <h3>Courses</h3>
-        <ul class="rows">
-          <li class="row"><span class="when">2026</span><p class="what">Guest lecture, Digitization and AI in the Built Environment<span class="sub">CEE 121/221, Stanford University</span></p></li>
-          <li class="row"><span class="when">2025</span><p class="what">Fellowship Preparation, two lectures on writing fellowship applications<span class="sub">University of Cambridge</span></p></li>
-          <li class="row"><span class="when">2024</span><p class="what">Digital Twin Course, bachelor level; contributed to course design<span class="sub">University of Cambridge</span></p></li>
-          <li class="row"><span class="when">2020–2023</span><p class="what">Software Lab, master level; led group projects<span class="sub">Technical University of Munich</span></p></li>
-          <li class="row"><span class="when">2019–2020</span><p class="what">Construction Informatics 1 and Engineering Database<span class="sub">Technical University of Munich</span></p></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Mentoring</h3>
-        <ul class="rows">
-          <li class="row"><span class="when">2025–present</span><p class="what">Two PhD students, in LLM research and sustainable development<span class="sub">Stanford University</span></p></li>
-          <li class="row"><span class="when">2023–2024</span><p class="what">One PhD student, digital twin research<span class="sub">University of Cambridge</span></p></li>
-          <li class="row"><span class="when">2021</span><p class="what">Three master's theses and one bachelor's thesis<span class="sub">Technical University of Munich</span></p></li>
-        </ul>
-        <h3>Pedagogical training</h3>
-        <ul class="rows">
-          <li class="row"><span class="when"></span><p class="what">Associate Fellow, Advance HE<span class="sub">Professional recognition in teaching and supporting learning, UK</span></p></li>
-          <li class="row"><span class="when"></span><p class="what">Research Mentor Training, CIRTL Network<span class="sub">Teaching and Professional Development Programs, US</span></p></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- ================= AWARDS & FUNDING ================= -->
   <section class="wrap block" id="awards">
     <h2>Awards and funding</h2>
@@ -322,7 +285,6 @@ footer a{color:var(--ink)}
         <h3>Awards</h3>
         <ul class="rows">
           <li class="row"><span class="when">2025</span><p class="what">Best Paper Award<span class="sub">Journal of <em>Smart Construction</em></span></p></li>
-          <li class="row"><span class="when">2025</span><p class="what">Scholarship, EnterpriseTech programme<span class="sub">Judge Business School, University of Cambridge</span></p></li>
           <li class="row"><span class="when">2022</span><p class="what">3rd Prize, Scan-to-BIM Competition<span class="sub">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span></p></li>
           <li class="row"><span class="when">2021</span><p class="what">2nd Prize, Scan-to-BIM Competition<span class="sub">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span></p></li>
         </ul>
@@ -387,7 +349,7 @@ footer a{color:var(--ink)}
    ============================================================ */
 const LINKS = {
   email:    "ydpan@stanford.edu",
-  scholar:  "",   // e.g. "https://scholar.google.com/citations?user=..."
+  scholar:  "https://scholar.google.de/citations?user=mAC2Ky0AAAAJ&hl=en&oi=ao",
   github:   "",   // e.g. "https://github.com/..."
   linkedin: "",   // e.g. "https://www.linkedin.com/in/..."
   orcid:    "",   // e.g. "https://orcid.org/0000-0000-0000-0000"
@@ -494,7 +456,7 @@ function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g
 function renderLinks(){
   const ul=document.getElementById("links");
   const items=[];
-  if(LINKS.email)   items.push(['mailto:'+LINKS.email,'Email']);
+  if(LINKS.email)   items.push(['mailto:'+LINKS.email,LINKS.email]);
   if(LINKS.scholar) items.push([LINKS.scholar,'Google Scholar']);
   if(LINKS.github)  items.push([LINKS.github,'GitHub']);
   if(LINKS.linkedin)items.push([LINKS.linkedin,'LinkedIn']);
@@ -516,12 +478,11 @@ function authorsHTML(list){
 }
 
 const TYPE_ORDER={review:0,journal:1,conference:2,chapter:3,report:4};
-const state={type:"all",firstOnly:false};
+const state={type:"all"};
 
 function renderPubs(){
   const list=document.getElementById("pubList");
   let items=PUBS.filter(p=>state.type==="all"||p.type===state.type);
-  if(state.firstOnly) items=items.filter(p=>p.authors[0]===ME);
   // Stable sort: under review first, then by year (newest first), keeping array order within a year.
   items=items.map((p,i)=>({p,i})).sort((a,b)=>{
     const ya=a.p.year??9999, yb=b.p.year??9999;
@@ -535,7 +496,7 @@ function renderPubs(){
     list.innerHTML=items.map(p=>{
       const when=p.year?String(p.year):'Under review';
       let venue=p.venue;
-      if(p.corr) venue+='. Corresponding author';
+      if(p.corr) venue+='. <strong>Corresponding author</strong>';
       if(p.award) venue+='. <span class="award">'+esc(p.award)+'</span>';
       if(p.doi) venue+='<a href="https://doi.org/'+esc(p.doi)+'">doi</a>';
       return '<li class="pub"><span class="when">'+when+'</span><div>'+
@@ -544,15 +505,6 @@ function renderPubs(){
         '<p class="venue">'+venue+'</p></div></li>';
     }).join('');
   }
-
-  // Count sentence (always for the full list)
-  const n=t=>PUBS.filter(p=>p.type===t).length;
-  const first=t=>PUBS.filter(p=>p.type===t&&p.authors[0]===ME).length;
-  document.getElementById("pubCount").textContent=
-    n("journal")+' refereed journal articles ('+first("journal")+' as first author), '+
-    n("conference")+' conference papers ('+first("conference")+' as first author), '+
-    n("chapter")+' book chapters, '+n("report")+' technical report, and '+
-    n("review")+' manuscripts under review. Own name in bold.';
 }
 
 document.getElementById("filters").addEventListener("click",e=>{
@@ -561,37 +513,57 @@ document.getElementById("filters").addEventListener("click",e=>{
   document.querySelectorAll("#filters button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
   renderPubs();
 });
-document.getElementById("firstOnly").addEventListener("change",e=>{state.firstOnly=e.target.checked;renderPubs();});
 
-/* ---------- Hero visual: a scanned structure becoming a graph ---------- */
+/* ---------- Hero visual: a scanned built environment becoming a digital-twin graph ---------- */
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 function drawCloud(){
   const svg=document.getElementById("cloud"); if(!svg) return;
   const rnd=mulberry32(20260928);
   const NS="http://www.w3.org/2000/svg";
-  // Corner nodes of an isometric block (the "graph")
-  const P={p1:[92,238],p2:[196,282],p3:[300,236],q1:[92,118],q2:[196,162],q3:[300,116],q4:[196,72]};
-  const edges=[["p1","p2"],["p2","p3"],["p1","q1"],["p2","q2"],["p3","q3"],["q1","q2"],["q2","q3"],["q1","q4"],["q4","q3"]];
-  // Floor lines on the two visible faces
-  const floors=[];
-  for(let k=1;k<=2;k++){
-    const dy=k*40;
-    floors.push([[92,118+dy],[196,162+dy]]);
-    floors.push([[196,162+dy],[300,116+dy]]);
-  }
+  const groundY=248;
+
+  // A side-elevation skyline of buildings on a shared street line: [left, right, top].
+  const buildings=[
+    [40,92,158],
+    [92,138,102],
+    [156,214,178],
+    [214,258,128],
+    [278,352,66]
+  ];
+
+  // Building outlines (left, top, right edges) plus interior floor lines and mullions.
+  const edges=[];   // outline segments for the graph + scan
+  const detail=[];  // interior lines that only get scan points
+  const topNodes=[];// accent nodes at the roof corners
+  buildings.forEach(([x0,x1,ty])=>{
+    const tl=[x0,ty], tr=[x1,ty], bl=[x0,groundY], br=[x1,groundY];
+    edges.push([tl,tr],[tl,bl],[tr,br]);
+    topNodes.push(tl,tr);
+    const floors=Math.max(1,Math.round((groundY-ty)/24));
+    for(let f=1;f<floors;f++){
+      const y=ty+(groundY-ty)*f/floors;
+      detail.push([[x0,y],[x1,y]]);
+    }
+    const cols=Math.max(1,Math.round((x1-x0)/20));
+    for(let c=1;c<cols;c++){
+      const x=x0+(x1-x0)*c/cols;
+      detail.push([[x,ty],[x,groundY]]);
+    }
+  });
+
   const g=(cls)=>{const e=document.createElementNS(NS,"g");if(cls)e.setAttribute("class",cls);svg.appendChild(e);return e;};
   const ground=g(), scan=g(), graph=g();
 
-  // Ground returns: sparse points fading with distance
-  for(let i=0;i<260;i++){
-    const x=rnd()*400, y=236+rnd()*64;
+  // Ground returns: sparse street-level points fading with distance
+  for(let i=0;i<240;i++){
+    const x=rnd()*400, y=groundY+2+rnd()*48;
     const c=document.createElementNS(NS,"circle");
     c.setAttribute("cx",x.toFixed(1));c.setAttribute("cy",y.toFixed(1));c.setAttribute("r","0.9");
-    c.setAttribute("fill","currentColor");c.setAttribute("opacity",(0.06+rnd()*0.18).toFixed(2));
+    c.setAttribute("fill","currentColor");c.setAttribute("opacity",(0.05+rnd()*0.16).toFixed(2));
     ground.appendChild(c);
   }
-  // Scan points along structure edges and floor lines, with jitter
-  const segs=edges.map(([a,b])=>[P[a],P[b]]).concat(floors);
+  // Scan points along building outlines and interior lines, with jitter
+  const segs=edges.concat(detail);
   segs.forEach(([a,b])=>{
     const len=Math.hypot(b[0]-a[0],b[1]-a[1]);
     const n=Math.round(len/3.2);
@@ -600,18 +572,23 @@ function drawCloud(){
       const x=a[0]+(b[0]-a[0])*t+j, y=a[1]+(b[1]-a[1])*t+(rnd()-0.5)*2.2;
       const c=document.createElementNS(NS,"circle");
       c.setAttribute("cx",x.toFixed(1));c.setAttribute("cy",y.toFixed(1));c.setAttribute("r",(0.9+rnd()*0.7).toFixed(2));
-      c.setAttribute("fill","currentColor");c.setAttribute("opacity",(0.35+rnd()*0.4).toFixed(2));
+      c.setAttribute("fill","currentColor");c.setAttribute("opacity",(0.32+rnd()*0.4).toFixed(2));
       scan.appendChild(c);
     }
   });
-  // Graph: faint straight edges and accent nodes at corners
+  // Street line
+  const gl=document.createElementNS(NS,"line");
+  gl.setAttribute("x1","20");gl.setAttribute("y1",groundY);gl.setAttribute("x2","384");gl.setAttribute("y2",groundY);
+  gl.setAttribute("stroke","currentColor");gl.setAttribute("stroke-width","0.6");gl.setAttribute("opacity","0.35");
+  graph.appendChild(gl);
+  // Graph: faint outline edges and accent nodes at the roof corners
   edges.forEach(([a,b])=>{
     const l=document.createElementNS(NS,"line");
-    l.setAttribute("x1",P[a][0]);l.setAttribute("y1",P[a][1]);l.setAttribute("x2",P[b][0]);l.setAttribute("y2",P[b][1]);
+    l.setAttribute("x1",a[0]);l.setAttribute("y1",a[1]);l.setAttribute("x2",b[0]);l.setAttribute("y2",b[1]);
     l.setAttribute("stroke","currentColor");l.setAttribute("stroke-width","0.6");l.setAttribute("opacity","0.35");
     graph.appendChild(l);
   });
-  Object.values(P).forEach(([x,y])=>{
+  topNodes.forEach(([x,y])=>{
     const c=document.createElementNS(NS,"circle");
     c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","3.2");
     c.setAttribute("fill","var(--accent)");
