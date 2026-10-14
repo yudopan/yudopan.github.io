@@ -120,6 +120,8 @@ p{margin:0 0 1rem;max-width:68ch}
 .row .what .org{color:var(--muted)}
 .row .what .sub{display:block;color:var(--muted);font-size:.95rem;margin-top:.15rem}
 .row p{margin:0}
+.news-scroll{max-height:33rem;overflow-y:auto;overscroll-behavior:contain;padding-right:.75rem;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);scrollbar-color:var(--hairline) transparent}
+.news-scroll:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
 
 /* ---------- Interests ---------- */
 .interests{list-style:none;padding:0;margin:.4rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
@@ -226,11 +228,13 @@ footer a{color:var(--ink)}
   <!-- ================= NEWS ================= -->
   <section class="wrap block" id="news">
     <h2>News</h2>
-    <ul class="rows">
+    <ul class="rows news-scroll" tabindex="0" aria-label="News, scrollable">
       <li class="row"><span class="when">Sep 2026</span><p class="what">Our paper on anchoring LLM-based chest X-ray report generation via diffusion language planning is accepted at NeurIPS 2026.</p></li>
       <li class="row"><span class="when">Aug 2026</span><p class="what">Our paper &ldquo;Image-Guided Pavement Defect Recognition in GPR Data with Novel 3D Deep Learning Architecture&rdquo; is accepted at the <em>Journal of Computing in Civil Engineering</em>.</p></li>
-      <li class="row"><span class="when">2026</span><p class="what">Two NLP papers this year: EGT-KG, evidence-grounded typed knowledge-graph retrieval for scientific QA with small language models, at EMNLP 2026, and LLM-guided semantic bootstrapping for interpretable text classification in Findings of ACL 2026.</p></li>
-      <li class="row"><span class="when">2026</span><p class="what">Two papers in <em>Automation in Construction</em> on LLM-enabled multi-agent frameworks: one for automated Scan-to-BIM and Scan-to-Graph reconstruction, one for natural-language interaction with graph-based digital twins.</p></li>
+      <li class="row"><span class="when">2026</span><p class="what">&ldquo;EGT-KG: Evidence-Grounded Typed KG Retrieval for Practical Scientific QA with Small Language Models&rdquo; is accepted at EMNLP 2026.</p></li>
+      <li class="row"><span class="when">2026</span><p class="what">&ldquo;LLM-guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines&rdquo; appears in <em>Findings of ACL 2026</em>.</p></li>
+      <li class="row"><span class="when">2026</span><p class="what">&ldquo;LLM-enabled Multi-agent Framework for Automated Scan-to-BIM and Scan-to-Graph Reconstruction&rdquo; is published in <em>Automation in Construction</em>.</p></li>
+      <li class="row"><span class="when">2026</span><p class="what">&ldquo;LLM-enabled Multi-agent Framework for Natural Language Interaction with Graph-Based Digital Twins&rdquo; is published in <em>Automation in Construction</em>.</p></li>
       <li class="row"><span class="when">2026</span><p class="what">As corresponding author: &ldquo;Automating Graph-Based Geometric Digital Model Generation for Building Digital Twin Applications from Point Cloud and Image Data&rdquo; is published in <em>Building and Environment</em>.</p></li>
       <li class="row"><span class="when">2026</span><p class="what">As corresponding author: &ldquo;Regional Graph-Based Pavement Condition Data Quality Assessment in Support of Trustworthy Highway Infrastructure Digital Twins&rdquo; is published in <em>Automation in Construction</em>.</p></li>
       <li class="row"><span class="when">2026</span><p class="what">&ldquo;SemanticBridge: A Dataset for 3D Semantic Segmentation of Bridges and Domain Gap Analysis&rdquo; is published in <em>Developments in the Built Environment</em>.</p></li>
